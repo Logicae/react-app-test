@@ -12,8 +12,11 @@ import { robots } from './robots';
         }
     }
 
-    onSearchChange(event) {
-        console.log(event)
+    onSearchChange = (event) => {
+        const filteredRobots = this.state.robots.filter(robot => {
+            return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+        })
+        console.log(filteredRobots)
     }
 
     render() { 
